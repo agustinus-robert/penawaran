@@ -27,6 +27,7 @@ return [
 	'form_validation_tglawal_required' => 'Tanggal Awal tidak boleh kosong',
 	'form_validation_tglakhir_required' => 'Tanggal Akhir tidak boleh kosong',
 	'form_validation_harga_required' => 'Harga tidak boleh kosong',
+	'form_validation_date_akhir' => 'Tanggal akhir harus lebih dari tanggal awal',
 	'form_success_add' => 'Permintaan jasa telah ditambahkan',
 	'form_success_delete' => 'Permintaan Jasa telah dihapus',
 	'aksi_setuju' => 'Disetujui',

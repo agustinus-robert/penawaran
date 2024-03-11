@@ -106,7 +106,7 @@ class PermintaanJasaController extends Controller
             'perusahaan' => 'required',
             'client' => 'required',
             'tanggal_awal' => 'required',
-            'tanggal_akhir' => 'required',
+            'tanggal_akhir' => 'required|after:tanggal_awal',
             'nominal' => 'required',
         );
 
@@ -116,7 +116,8 @@ class PermintaanJasaController extends Controller
           'client.required' => __('permintaan.form_validation_client_required'),
           'tanggal_awal.required' => __('permintaan.form_validation_tglawal_required'),
           'tanggal_akhir.required' => __('permintaan.form_validation_tglakhir_required'),
-          'nominal.required' => __('permintaan.form_validation_harga_required')
+          'nominal.required' => __('permintaan.form_validation_harga_required'),
+          'tanggal_akhir.after' => __('permintaan.form_validation_date_akhir') 
         ];
 
         $validator = Validator::make($request->all(), $rules, $customMessages);

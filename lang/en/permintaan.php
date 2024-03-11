@@ -27,6 +27,7 @@ return [
 	'form_validation_tglawal_required' => 'Start Date cannot be empty',
 	'form_validation_tglakhir_required' => 'End Date cannot be empty',
 	'form_validation_harga_required' => 'Price cannot be empty',
+	'form_validation_date_akhir' => 'End date must grather than start date',
 	'form_success_add' => 'Request service was added',
 	'form_success_delete' => 'Request service was deleted',
 	'aksi_setuju' => 'Approved',
