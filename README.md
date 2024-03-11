@@ -8,7 +8,7 @@ Untuk memasang aplikasi ini pada komputer lokal anda, silahkan ikuti petunjuk di
 	- Buat database, disini saya membuat database bernama: penawaran
 	- Masukkan admin_transisi pada .env: DB_DATABASE
 	- jalankan perintah: php artisan migrate:fresh --seed
-	- Jalankan pada browser: **https://localhost/penawaran**
+	- Jalankan pada browser: https://localhost/penawaran
 
 
 ## CATATAN
