@@ -21,18 +21,19 @@ Setiap alur program sudah tertulis pada setiap controller, untuk login terbagi 3
 	- perusahaan
 
 ## CATATAN PENGGUNA/USER (Pengguna default)
-	
-	Role: <b>Admin</b>
+
+
+   Role: **Admin**
 	username: admin@penawaran.com
 	password: penawaran
 
 
 
-	Role: **Client**
+   Role: **Client**
 	username: client@penawaran.com
 	password: penawaran
 
 
-	Role: **Perusahaan**
+   Role: **Perusahaan**
 	username: perusahaan@penawaran.com
 	password: penawaran
