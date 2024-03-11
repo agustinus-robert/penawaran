@@ -59,7 +59,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>{{ __('permintaan.table_request_date') }}</label>
-                                    <input type="date" class="form-control @error('tanggal_awal') is-invalid @enderror" name="tanggal_awal" value="{{ old('tanggal_awal') }}" />
+                                    <input type="text" class="form-control @error('tanggal_awal') is-invalid @enderror" id="tanggal_awal" name="tanggal_awal" value="{{ old('tanggal_awal') }}" />
 
                                     @error('tanggal_awal')
                                         <div class="alert alert-danger">{{ $message }}</div>
@@ -70,7 +70,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>{{ __('permintaan.table_end_request_date') }}</label>
-                                    <input type="date" class="form-control @error('tanggal_akhir') is-invalid @enderror" name="tanggal_akhir" value="{{ old('tanggal_akhir') }}" />
+                                    <input type="text" class="form-control @error('tanggal_akhir') is-invalid @enderror" id="tanggal_akhir" name="tanggal_akhir" value="{{ old('tanggal_akhir') }}" />
 
                                     @error('tanggal_akhir')
                                         <div class="alert alert-danger">{{ $message }}</div>
@@ -102,6 +102,23 @@
 
 <script type="text/javascript">
  $(document).ready(function() {
+
+        $('#tanggal_awal').datetimepicker({
+            formatDate: 'm/d/Y',
+            format: 'Y/m/d',
+            timepicker:false,
+            minDate : new Date(),
+        })
+
+
+        $('#tanggal_akhir').datetimepicker({
+            formatDate: 'm/d/Y',
+            format: 'Y/m/d',
+            timepicker:false,
+            minDate : new Date(),
+        })
+
+           
 
        $('#perusahaan').select2({
               ajax: {

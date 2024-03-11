@@ -45,6 +45,9 @@
      <script src="{{url('public/moment/moment-with-locales.js')}}"></script>
      <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
+   
+
+
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
     <link rel="stylesheet" href="{{url('public/vendor/laraberg/css/laraberg.css')}}">
     <link rel="stylesheet" href="{{ url('public/vendor/file-manager/css/file-manager.css') }}">
@@ -376,6 +379,9 @@
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     <script type="text/javascript" src="{{ url('public/timepicker/jquery.datetimepicker.full.min.js') }}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.9/dayjs.min.js"></script>
+    <script type="text/javascript" src="{{ url('public/timepicker/timepickers.js') }}"></script>
     <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="{{url('public/icpc/js/bootstrap-iconpicker.bundle.min.js')}}"></script>            
     <!-- Core plugin JavaScript-->
