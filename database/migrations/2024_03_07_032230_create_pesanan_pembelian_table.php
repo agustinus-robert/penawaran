@@ -1,0 +1,34 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('pesanan_pembelian', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('jasa_id');
+            $table->integer('tipe_jasa_id');
+            $table->string('referensi_pembelian');
+            $table->softDeletes()->nullable();
+            $table->integer('created_by');
+            $table->integer('deleted_by')->nullable();
+            $table->integer('updated_by');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('pesanan_pembelian');
+    }
+};

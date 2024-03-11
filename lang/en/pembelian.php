@@ -1,0 +1,25 @@
+<?php 
+return [
+	'judul' => 'Purchase Order',
+	'judul_pembayaran' => 'Purchase Payment',
+	'judul_card' => 'List Of Purchase',
+	'table_no' => 'No',
+	'table_nama' => 'Purchase Name',
+	'table_tipe' => 'Type',
+	'table_referensi' => 'Reference Number',
+	'table_status' => 'Paid Status',
+	'form_add' => 'Tambah Permintaan Jasa',
+	'form_pekerjaan' => 'Nama permintaan',
+	'form_proyek' => 'Nama Projek',
+	'form_tipe_pekerjaan' => 'Pilih Tipe Pekerjaan',
+	'form_client' => 'Pilih Client',
+	'form_perusahaan' => 'Pilih Perusahaan',
+	'form_nominal' => 'Harga',
+	'form_submit' => 'Simpan',
+	'aksi_setuju' => 'Disetujui',
+	'aksi_ditolak' => 'Ditolak',
+	'aksi_menunggu' => 'Menunggu',
+	'aksi_sukses_bayar' => 'Paid',
+	'aksi_tunggu_bayar' => 'Pending Paid',
+	'aksi_gagal_bayar' => 'Fail Paid'
+];
