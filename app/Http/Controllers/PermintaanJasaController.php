@@ -72,7 +72,7 @@ class PermintaanJasaController extends Controller
                                 } else if($row->approve == 2){
                                     $template .= '<span class="badge badge-success">'.__('permintaan.aksi_ditolak').'</span>';
                                 } else {
-                                    $template .= __('permintaan.aksi_menunggu');
+                                    $template .= '<span class="badge badge-warning">'.__('permintaan.aksi_menunggu').'</span>';
                                 }
 
                                  return $template;
@@ -197,8 +197,16 @@ class PermintaanJasaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id, Request $request)
     {
         //
+        $update['deleted_at'] = date('Y-m-d H:i:s');
+        $update['deleted_by'] = \Auth::user()->id;
+
+        $company = PermintaanJasaModel::whereId($id)->update($update);
+
+        // redirect
+        $request->session()->flash('msg', __('permintaan.form_success_delete'));
+        return Redirect::to('permintaan_jasa');
     }
 }

@@ -234,7 +234,7 @@ class PenawaranJasaController extends Controller
      * 
      * Ini adalah soft delete, jadi jika status masih pending maka bisa dihapus, jika sudah disetujui/tidak disetujui maka data tidak bisa dihapus
      */
-    public function destroy(string $id)
+    public function destroy(string $id, Request $request)
     {
         //
 
