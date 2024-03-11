@@ -163,6 +163,6 @@ class RefTipePekerjaanController extends Controller
 
     // tambah fungsi custom pada resource controller
     public function select(Request $request){
-        return RefTipePekerjaan::where('nama','like','%'.$request->q.'%')->paginate(5, '*', 'page', $request->page)->toArray();
+        return RefTipePekerjaan::where('nama','like','%'.$request->q.'%')->where('deleted_at', null)->paginate(5, '*', 'page', $request->page)->toArray();
     }
 }

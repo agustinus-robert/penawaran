@@ -136,6 +136,6 @@ class RefPerusahaanController extends Controller
     // tambah fungsi custom pada resource controller
 
     public function select(Request $request){
-       return RefPerusahaan::where('nama','like','%'.$request->q.'%')->paginate(5, '*', 'page', $request->page)->toArray();
+       return RefPerusahaan::where('nama','like','%'.$request->q.'%')->where('deleted_at', null)->paginate(5, '*', 'page', $request->page)->toArray();
     }
 }

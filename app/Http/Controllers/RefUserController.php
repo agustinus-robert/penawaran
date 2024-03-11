@@ -242,11 +242,18 @@ class RefUserController extends Controller
     public function destroy(string $id, Request $request)
     {
         //
+        $role = User::where('id', $id)->with('roles')->first();
+        
         $update['deleted_at'] = date('Y-m-d H:i:s');
         $update['deleted_by'] = \Auth::user()->id;
 
         $user = User::whereId($id)->update($update);
-
+        
+        if($role->roles->first()->name == 'client'){
+            ClientModel::where(['user_id' => $id])->update($update);
+        } else if($role->roles->first()->name == 'perusahaan'){
+            RefPerusahaan::where(['user_id' => $id])->update($update);
+        }
         // redirect
         $request->session()->flash('msg', __('user.form_success_delete'));
         return Redirect::to('ref_user');

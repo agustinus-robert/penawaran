@@ -18,8 +18,6 @@ return new class extends Migration
             $table->unsignedBigInteger('client_id');
             $table->unsignedBigInteger('proyek_id');
             $table->unsignedBigInteger('tipe_pekerjaan_id');
-            $table->date('tanggal_awal');
-            $table->date('tanggal_akhir');
             $table->string('nominal');
             $table->integer('approve');
             $table->date('approved_at')->nullable();

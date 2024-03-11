@@ -60,10 +60,22 @@
                                             <input type="email" name="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Enter Email Address...">
+
+                                                @error('email')
+                                                    <span class="invalid-feedback" style="display:block;" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                         </div>
                                         <div class="form-group">
                                             <input type="password" name="password" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Password">
+
+                                            @error('password')
+                                              <span class="invalid-feedback" style="display:block;" role="alert">
+                                                  <strong>{{ $message }}</strong>
+                                              </span>
+                                            @enderror
                                         </div>
                                         
                                         <input type="submit" class="btn btn-primary btn-user btn-block" value="Login">
