@@ -33,8 +33,15 @@ class ApprovePenawaranController extends Controller
         `penawaran_jasa`.`id` AS `id`
         FROM `penawaran_jasa`
         LEFT JOIN `ref_perusahaan` ON `ref_perusahaan`.`id` = `penawaran_jasa`.`perusahaan_id`
-        LEFT JOIN `client` ON `client`.`user_id` = `penawaran_jasa`.`client_id`
-        LEFT JOIN `users` ON `users`.`id` = `client`.`user_id`
+        LEFT JOIN `client` ON `client`.`user_id` = `penawaran_jasa`.`client_id`";
+        
+        if(\Auth::user()->hasRole('client')){
+            $sql .= "LEFT JOIN `users` ON `users`.`id` = `client`.`user_id`";
+        } else {
+            $sql .= "LEFT JOIN `users` ON `users`.`id` = `ref_perusahaan`.`user_id`";
+        }
+
+        $sql .= "
         LEFT JOIN `tipe_pekerjaan` ON `tipe_pekerjaan`.`id` = `penawaran_jasa`.`tipe_pekerjaan_id`
         LEFT JOIN `pekerjaan` ON `pekerjaan`.`id` = `penawaran_jasa`.`pekerjaan_id`
         LEFT JOIN `proyek` ON `proyek`.`id` = `penawaran_jasa`.`proyek_id`
@@ -48,6 +55,7 @@ class ApprovePenawaranController extends Controller
          if(\Auth::user()->hasRole('perusahaan')){
             $sql .= " AND `users`.`id` = '".\Auth::user()->id."'";
         }
+
 
         if (request()->ajax()) {
             return datatables()->of(DB::select($sql))

@@ -82,7 +82,7 @@
 
                         <div class="form-group">
                             <label>{{ __('permintaan.form_nominal') }}</label>
-                            <input type="text" class="form-control @error('nominal') is-invalid @enderror" name="nominal" value="{{ old('nominal') }}" />
+                            <input type="number" class="form-control @error('nominal') is-invalid @enderror" name="nominal" value="{{ old('nominal') }}" />
 
                             @error('nominal')
                                 <div class="alert alert-danger">{{ $message }}</div>

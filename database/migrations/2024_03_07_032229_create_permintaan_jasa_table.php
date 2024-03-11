@@ -19,10 +19,10 @@ return new class extends Migration
             $table->date('tanggal_approve')->nullable();
             $table->date('tanggal_awal');
             $table->date('tanggal_akhir');
-            $table->date('nominal');
+            $table->string('nominal');
             $table->integer('tipe');
-            $table->foreign('client_id')->references('id')->on('client')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('perusahaan_id')->references('id')->on('ref_perusahaan')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('client_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('perusahaan_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('status');
             $table->softDeletes()->nullable();
             $table->integer('created_by');

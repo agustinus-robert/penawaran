@@ -23,8 +23,8 @@ return new class extends Migration
             $table->date('approved_at')->nullable();
             $table->integer('tipe');
             $table->foreign('pekerjaan_id')->references('id')->on('pekerjaan')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('perusahaan_id')->references('id')->on('ref_perusahaan')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('client_id')->references('id')->on('client')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('perusahaan_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('client_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('proyek_id')->references('id')->on('proyek')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('tipe_pekerjaan_id')->references('id')->on('tipe_pekerjaan')->onUpdate('cascade')->onDelete('cascade');
             $table->softDeletes()->nullable();

@@ -57,7 +57,7 @@
                                     <form class="user" action="{{ route('login') }}" method="POST">
                                         @csrf
                                         <div class="form-group">
-                                            <input type="email" name="email" class="form-control form-control-user"
+                                            <input type="email" required name="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Enter Email Address...">
 
@@ -68,7 +68,7 @@
                                                 @enderror
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" name="password" class="form-control form-control-user"
+                                            <input type="password" required name="password" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Password">
 
                                             @error('password')
