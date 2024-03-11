@@ -22,7 +22,7 @@ Setiap alur program sudah tertulis pada setiap controller, untuk login terbagi 3
 
 ## CATATAN PENGGUNA/USER (Pengguna default)
 	
-	Role: **Admin**
+	Role: <b>Admin</b>
 	username: admin@penawaran.com
 	password: penawaran
 
